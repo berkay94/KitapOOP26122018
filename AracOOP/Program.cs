@@ -10,29 +10,33 @@ namespace AracOOP
     {
         static void Main(string[] args)
         {
-            Otomobil o = new Otomobil(1,"Ford",2017,"Amerika",120);
-            
-            Console.WriteLine(o.ToString());
-            o.DepoDoldur = 20;
-            o.DepoDoldur = 30;
-           
-            o.Calistir();
-            o.Calistir();
-            o.ToString();
+            //Otomobil o = new Otomobil(AracTipi.Kara, YakitTuru.Benzin,KasaTipi.Sedan,"Ford",2017,"Amerika",120);
+
+            //Console.WriteLine(o.ToString());
+            //o.DepoDoldur = 20;
+            //o.DepoDoldur = 30;
+
+            //o.Calistir();
+            //o.Calistir();
+            //o.ToString();
+
+            Ucak u = new Ucak(UcakTuru.Savaş, 20, 5, 900,20,5);
+            Console.WriteLine(u.ToString());
             
             Console.ReadLine();
-            Console.Write("fsfsdf");
+            
         }
     }
 
     class Arac
     {
-        int aracTipi;
+        AracTipi aracTipi;
         string model;
         int yil;
         string mensei;
         int beygirGucu;
-        int yakitTuru;
+        YakitTuru yakitTuru;
+        KasaTipi kasaTipi;
 
         public int BeygirGucu
         {
@@ -74,7 +78,7 @@ namespace AracOOP
                 model = value;
             }
         }
-        public int YakitTuru
+        public YakitTuru YakitTuru
         {
             get
             {
@@ -103,7 +107,7 @@ namespace AracOOP
                 }
             }
         }
-        public int AracTipi
+        public AracTipi AracTipi
         {
             get
             {
@@ -114,6 +118,34 @@ namespace AracOOP
                 aracTipi = value;
             }
         }
+        public KasaTipi KasaTipi
+        {
+            get
+            {
+                return kasaTipi;
+            }
+            set
+            {
+                kasaTipi = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Temel Özellikler");
+            sb.AppendLine("---------------");
+            sb.AppendLine($"Araç Modeli: {Model}");
+            sb.AppendLine($"Arac Yili: {Yil}");
+            sb.AppendLine($"Mensei: {Mensei}");
+            sb.AppendLine($"AracTipi: {AracTipi}");
+            sb.AppendLine($"BeygirGucu: {BeygirGucu}");
+            sb.AppendLine($"YakitTuru: {YakitTuru}");
+            sb.AppendLine("----------------");
+                
+            
+            return sb.ToString();
+        }
 
     }
     class Otomobil:Arac
@@ -122,7 +154,7 @@ namespace AracOOP
         string renk;
         int kapiSayisi;
         int vitesTuru;
-        string kasaTipi;
+        int kasaTipi;
         int depo;
         int hiz;
 
@@ -194,11 +226,12 @@ namespace AracOOP
         public override string ToString()
         {
             string str;
-            str = $"Araç Modeli: {Model} \nArac Yili: {Yil} \nMensei: {Mensei} \nAracTipi: {AracTipi} \nBeygirGucu: {BeygirGucu} \nRenk:{renk}";
+            str = base.ToString();
+            str += $"Renk:{renk} \nKasaTipi:{KasaTipi}";
             return str;
         }
 
-        public Otomobil(int aracTipi,string model,int yil,string mensei,int beygirGucu,string Renk="beyaz")
+        public Otomobil(AracTipi aracTipi, YakitTuru yakit,KasaTipi kasaTipi,string model,int yil,string mensei,int beygirGucu,string Renk="Beyaz")
         {
             AracTipi = aracTipi;
             Model = model;
@@ -206,10 +239,122 @@ namespace AracOOP
             Mensei = mensei;
             BeygirGucu = beygirGucu;
             renk = Renk;
+            YakitTuru = yakit;
+            KasaTipi = kasaTipi;
         }
         public Otomobil()
         {
 
+        }
+
+    }
+
+    class Ucak:Arac
+    {
+        int yolcuSayisi;
+        UcakTuru ucakTuru;
+        int motorSayisi;
+        int hiz;
+        int uzunluk;
+        int kanatAcikligi;
+        
+
+        public Ucak(UcakTuru ucakTuru,int yolcuSayisi,int motorSayisi,int hiz,int uzunluk,int kanatAcikligi)
+        {
+            UcakTuru = ucakTuru;
+            YolcuSayisi = yolcuSayisi;
+            MotorSayisi = motorSayisi;
+            Hiz = hiz;
+            Uzunluk = uzunluk;
+            KanatAcikligi = kanatAcikligi;
+        }
+        public Ucak()
+        {
+                
+        }
+
+        public UcakTuru UcakTuru
+        {
+            get
+            {
+                return ucakTuru;
+            }
+            set
+            {
+                ucakTuru = value;
+
+            }
+        }
+        public int YolcuSayisi
+        {
+            get
+            {
+                return yolcuSayisi;
+            }
+            set
+            {
+                yolcuSayisi = value;
+            }
+        }
+        public int MotorSayisi
+        {
+            get
+            {
+                return motorSayisi;
+            }
+            set
+            {
+                motorSayisi = value;
+            }
+        }
+        public int Hiz
+        {
+            get
+            {
+                return hiz;
+            }
+            set
+            {
+                hiz = value;
+            }
+        }
+        public int Uzunluk
+        {
+            get
+            {
+                return uzunluk;
+            }
+            set
+            {
+                uzunluk = value;
+            }
+        }
+        public int KanatAcikligi
+        {
+            get
+            {
+                return kanatAcikligi;
+            }
+            set
+            {
+                kanatAcikligi = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Temel Özellikler");
+            sb.AppendLine("---------------");
+            sb.AppendLine($"Ucak Turu: {UcakTuru}");
+            sb.AppendLine($"Yolcu Sayisi: {YolcuSayisi}");
+            sb.AppendLine($"Motor Sayisi: {MotorSayisi}");
+            sb.AppendLine($"Hiz: {Hiz}"+" "+"km");
+            sb.AppendLine($"Uzunluk: {Uzunluk}"+" "+"metre");
+            sb.AppendLine($"Kanat Acikligi: {KanatAcikligi}"+" "+"metre");
+            sb.AppendLine("----------------");
+
+            return sb.ToString();
         }
 
     }
@@ -229,5 +374,20 @@ namespace AracOOP
         Ruzgar=6,
         Diger=7
 
+    }
+    enum KasaTipi
+    {
+        Sedan=1,
+        HatchBack=2,
+        Station=3,
+        Cabrio=4,
+        Cupe=5
+    }
+    enum UcakTuru
+    {
+        Yolcu=1,
+        Savaş=2,
+        Eğitim=3,
+        Kargo=4
     }
 }
