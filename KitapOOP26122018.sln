@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitapOOP26122018", "KitapOOP26122018\KitapOOP26122018.csproj", "{0A8C3CA6-3ECA-443E-A5C5-100C4A80C094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracOOP", "AracOOP\AracOOP.csproj", "{EFEF67ED-FBAF-4CAF-8507-1657507628A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A8C3CA6-3ECA-443E-A5C5-100C4A80C094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8C3CA6-3ECA-443E-A5C5-100C4A80C094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8C3CA6-3ECA-443E-A5C5-100C4A80C094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8C3CA6-3ECA-443E-A5C5-100C4A80C094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFEF67ED-FBAF-4CAF-8507-1657507628A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFEF67ED-FBAF-4CAF-8507-1657507628A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFEF67ED-FBAF-4CAF-8507-1657507628A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFEF67ED-FBAF-4CAF-8507-1657507628A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {319F390E-1FB1-4BC6-9830-9D140654068F}
+	EndGlobalSection
+EndGlobal
