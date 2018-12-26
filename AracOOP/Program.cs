@@ -188,6 +188,7 @@ namespace AracOOP
         {
             string c = calistimi ? "Calisiyor" : "Calismiyor";
             Console.WriteLine($"Arac şu anda {c} ve hizi {hiz} km Depoda {depo} litre yakit var");
+
             
         }
         public override string ToString()
