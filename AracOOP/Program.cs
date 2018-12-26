@@ -21,7 +21,7 @@ namespace AracOOP
             o.ToString();
             
             Console.ReadLine();
-            
+            Console.Write("fsfsdf");
         }
     }
 
