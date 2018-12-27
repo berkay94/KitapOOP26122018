@@ -20,7 +20,19 @@ namespace AracOOP
             //o.Calistir();
             //o.ToString();
 
-            Ucak u = new Ucak(UcakTuru.Savaş, 20, 5, 900,20,5);
+            Ucak u = new Ucak();
+            u.UcakTuru = UcakTuru.Yolcu;
+            u.MotorSayisi = 5;
+            u.Uzunluk = 40;
+            u.YakitTuru = YakitTuru.Diger;
+            u.Model = "Boeing";
+            u.KanatAcikligi = 10;
+            u.Hiz = 500;
+            u.Mensei = "USA";
+            u.Kapasite = 20000;
+            u.YolcuSayisi = 150;
+           
+            
             Console.WriteLine(u.ToString());
             
             Console.ReadLine();
@@ -52,7 +64,7 @@ namespace AracOOP
                 }
                 else
                 {
-                    Console.WriteLine("Beygir Gucu 0 il 1000 arasinda olmali");
+                    Console.WriteLine("Beygir Gucu 0 ile 1000 arasinda olmali");
                 }
             }
         }
@@ -257,9 +269,11 @@ namespace AracOOP
         int hiz;
         int uzunluk;
         int kanatAcikligi;
+        public int kapasite;
+
         
 
-        public Ucak(UcakTuru ucakTuru,int yolcuSayisi,int motorSayisi,int hiz,int uzunluk,int kanatAcikligi)
+        public Ucak(UcakTuru ucakTuru)
         {
             UcakTuru = ucakTuru;
             YolcuSayisi = yolcuSayisi;
@@ -267,10 +281,32 @@ namespace AracOOP
             Hiz = hiz;
             Uzunluk = uzunluk;
             KanatAcikligi = kanatAcikligi;
+            Kapasite = kapasite;
         }
         public Ucak()
         {
                 
+        }
+
+
+
+        public  int Kapasite
+        {
+            get
+            {
+                return kapasite;
+            }
+            set
+            {
+                if (value>0 && value<=20000)
+                {
+                    kapasite = value;
+                }
+                else
+                {
+                    Console.WriteLine("Kapasite 20000 dir");
+                }
+            }
         }
 
         public UcakTuru UcakTuru
@@ -349,7 +385,11 @@ namespace AracOOP
             sb.AppendLine($"Ucak Turu: {UcakTuru}");
             sb.AppendLine($"Yolcu Sayisi: {YolcuSayisi}");
             sb.AppendLine($"Motor Sayisi: {MotorSayisi}");
+            sb.AppendLine($"YakitTuru: {YakitTuru}");
+            sb.AppendLine($"Model: {Model}");
+            sb.AppendLine($"Kapasite: {Kapasite}");
             sb.AppendLine($"Hiz: {Hiz}"+" "+"km");
+            sb.AppendLine($"Mensei: {Mensei}");
             sb.AppendLine($"Uzunluk: {Uzunluk}"+" "+"metre");
             sb.AppendLine($"Kanat Acikligi: {KanatAcikligi}"+" "+"metre");
             sb.AppendLine("----------------");
