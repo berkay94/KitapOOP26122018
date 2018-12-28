@@ -40,7 +40,7 @@ namespace AracOOP
         }
     }
 
-    class Arac
+    class Arac:IArac
     {
         AracTipi aracTipi;
         string model;
@@ -142,6 +142,12 @@ namespace AracOOP
             }
         }
 
+        
+        public YakitTuru YakitTur { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Yili { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int BeygirGuccu { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public AracTipi AracTipleri { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -159,6 +165,10 @@ namespace AracOOP
             return sb.ToString();
         }
 
+        public void Yaz()
+        {
+            Console.WriteLine(this.ToString());
+        }
     }
     class Otomobil:Arac
     {
@@ -396,6 +406,29 @@ namespace AracOOP
 
             return sb.ToString();
         }
+
+    }
+
+    interface IArac
+    {
+       
+        string Model { get; set; }
+        string Mensei { get; set; }
+        YakitTuru YakitTur { get; set; }
+        int Yili { get; set; }
+        int BeygirGuccu{ get; set; }
+        AracTipi AracTipleri { get; set; }
+
+        void Yaz();
+    }
+
+    interface IKapasite
+    {
+        int  Kapasitesi{ get; set; }
+        int YolcuAdedi { get; set; }
+        int MotorAdedi { get; set; }
+
+        void KapasiteYaz();
 
     }
     enum AracTipi
